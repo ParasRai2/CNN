@@ -64,10 +64,12 @@ fig = plt.figure(figsize=(16, 12))
 tf.reset_default_graph()
 
 for num, data in enumerate(test_data[:16]):
-
+    img = cv2.imread("12.jpg")
     img_num = data[1]
     img_data = data[0]
-
+	
+    img= cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    img_data = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
     y = fig.add_subplot(4, 4, num+1)
     orig = img_data
     data = img_data.reshape(IMG_SIZE, IMG_SIZE, 1)

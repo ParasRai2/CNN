@@ -46,7 +46,7 @@ def create_model():
     return tflearn.DNN(convnet, tensorboard_dir='log', tensorboard_verbose=0)
 
 
-model = create_model()  
+model =create_model()
 if os.path.exists('{}.meta'.format(MODEL_NAME)):
     model.load(MODEL_NAME)
     print('model loaded!')
